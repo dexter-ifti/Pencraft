@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.w-md-editor-text-pre > code,
+.w-md-editor-text-input {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+.w-md-editor {
+  background-color: white !important;
+}
+
+.w-md-editor-toolbar {
+  border-bottom: 1px solid #e5e7eb !important;
+  background-color: #f9fafb !important;
+}
+
+.w-md-editor-toolbar li > button {
+  color: #4b5563 !important;
+}
+
+.w-md-editor-toolbar li > button:hover {
+  background-color: #e5e7eb !important;
+}
