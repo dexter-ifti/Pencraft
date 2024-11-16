@@ -1,6 +1,12 @@
 import { Bell, PenSquare, User, BookOpen } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        console.log('Write button clicked');
+        navigate('/write');
+    }
     return (
         <nav className="bg-white shadow-sm border-b">
             <div className="container mx-auto px-4 max-w-7xl">
@@ -11,7 +17,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex items-center space-x-6">
-                        <button className="flex items-center space-x-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+                        <button onClick={handleClick} className="flex items-center space-x-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
                             <PenSquare className="h-5 w-5" />
                             <span>Write</span>
                         </button>

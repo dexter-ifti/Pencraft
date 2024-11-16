@@ -5,6 +5,7 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Landing from './pages/Landing'
 import Blog from './pages/Blog'
+import WriteBlog from './pages/WriteBlog'
 function App() {
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/blogs' element={<Blog />} />
         <Route path='/blog/:id' element={<Blog />} />
+        <Route path='/write' element={<WriteBlog/>}/>
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Routes>
     </BrowserRouter>
