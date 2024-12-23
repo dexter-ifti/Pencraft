@@ -1,11 +1,7 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Signup from './pages/Signup'
-import Login from './pages/Login'
-import Landing from './pages/Landing'
-import Blog from './pages/Blog'
-import WriteBlog from './pages/WriteBlog'
+import { Login, Signup, Blog, WriteBlog, Landing } from './pages'
 function App() {
 
 
