@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import MDEditor from '@uiw/react-md-editor';
 import { Image, Link, Tags, X } from 'lucide-react';
 import { Navbar } from '../components';
+import axios from 'axios';
+import { BACKEND_URL } from '../config';
+import { useNavigate } from 'react-router-dom';
 
 export default function WriteBlog() {
     const [title, setTitle] = useState('');
@@ -9,6 +12,7 @@ export default function WriteBlog() {
     const [coverImage, setCoverImage] = useState('');
     const [tags, setTags] = useState<string[]>([]);
     const [currentTag, setCurrentTag] = useState('');
+    const navigate = useNavigate();
 
     const handleAddTag = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && currentTag.trim() !== '') {
@@ -22,6 +26,27 @@ export default function WriteBlog() {
     const removeTag = (tagToRemove: string) => {
         setTags(tags.filter(tag => tag !== tagToRemove));
     };
+
+    const handleSubmit = async () => {
+        const blog = {
+            title, description : content
+        };
+        try {
+            const response = await axios.post(`${BACKEND_URL}/api/v1/blog`,
+                blog,
+                {
+                    headers : {
+                        Authorization : `Bearer ${localStorage.getItem('token')}`
+                    }
+                }
+            );
+            console.log(response.data);    
+            navigate(`/blog/${response.data.post.id}`);
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
 
     return (
         <div>
@@ -112,7 +137,7 @@ export default function WriteBlog() {
                             <button className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
                                 Save Draft
                             </button>
-                            <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+                            <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700" onClick={handleSubmit}>
                                 Publish
                             </button>
                         </div>
