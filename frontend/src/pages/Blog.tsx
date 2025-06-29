@@ -1,6 +1,6 @@
 import { BlogList, Navbar, Recommendations } from '../components'
 import { useState, useEffect } from 'react';
-import { Search, Filter, TrendingUp, Clock, BookOpen, Sparkles } from 'lucide-react';
+import { Search, TrendingUp, Clock, BookOpen, Sparkles } from 'lucide-react';
 
 function Blog() {
   const [isVisible, setIsVisible] = useState(false);
