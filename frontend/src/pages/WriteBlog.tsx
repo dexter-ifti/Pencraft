@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MDEditor from '@uiw/react-md-editor';
-import { Image, Link, Tags, X, Save, Send, Eye, Sparkles, BookOpen, PenTool, Clock, Target } from 'lucide-react';
+import { Image, Tags, X, Save, Send, Eye, Sparkles, BookOpen, PenTool, Clock, Target } from 'lucide-react';
 import { Navbar } from '../components';
 import axios from 'axios';
 import { BACKEND_URL } from '../config';
