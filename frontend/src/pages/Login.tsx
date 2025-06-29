@@ -3,7 +3,7 @@ import { SigninSchema } from '@ifti_taha/common';
 import { Link, useNavigate } from 'react-router-dom';
 import { BACKEND_URL } from '../config';
 import axios from 'axios';
-import { BookOpen, Mail, Lock, Eye, EyeOff, ArrowRight, Sparkles } from 'lucide-react';
+import { BookOpen, Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
 
 export default function Login() {
     const navigate = useNavigate();
