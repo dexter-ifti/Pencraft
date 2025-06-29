@@ -1,4 +1,4 @@
-import { Bell, PenSquare, User, BookOpen, Search, Menu, X } from 'lucide-react';
+import { Bell, PenSquare, BookOpen, Search, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
